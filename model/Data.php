@@ -38,24 +38,35 @@ class Data{
         $preguntas = array();
 
 
-        if($reg = $rs->fetch_array()){
-            $pregunta = new Pregunta();
+        while($reg = $rs->fetch_array()){
+            
 
-            $pregunta->setId($reg[0]);
-            $pregunta->setOpcion1($reg[1]);
-            $pregunta->setOpcion2($reg[2]);
+            $idPreg=$reg[0];
+            $opcion1=$reg[1];
+            $opcion2=$reg[2];
 
-            array_push($preguntas,$pregunta);
+
+            $pregunta = new Pregunta($idPreg,$opcion1,$opcion2);
+            
+
+            $preguntas[]=$pregunta;
 
 
         }
 
+
         $this->con->desconectar();
+
         return $preguntas;
     }
 
 
+    public function crearResultado($cantVotosOpcion1, $cantVotosOpcion2, $fk_pregunta){
+        $query = "INSERT INTO pregunta VALUES (NULL, '$cantVotosOpcion1', '$cantVotosOpcion2', '$fk_pregunta')";
+        $this->usarConexion($query);
+        
 
+    }
 
 
 
