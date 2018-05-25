@@ -93,4 +93,84 @@ class Data{
     }
 
 
+    public function rescatarEstadisticas(){
+        $query= "SELECT * FROM estadistica";
+
+        $this->con->conectar();
+
+        $rs = $this->con->ejecutar($query);
+
+
+        
+        $estadisticas = array();
+
+
+        while($reg = $rs->fetch_array()){
+            
+
+            $idEst=$reg[0];
+            $fk_pre=$reg[1];
+            $cantVopcion1=$reg[2];
+            $cantVopcion2=$reg[3];
+            $cantVotos=$reg[4];
+            
+            
+
+
+            $est = new Estadistica($idEst,$fk_pre,$cantVopcion1,$cantVopcion2,$cantVotos);
+            
+
+            $estadisticas[]=$est;
+
+
+        }
+
+
+        $this->con->desconectar();
+
+        return $estadisticas;
+    }
+
+
+    public function rescatarPregunta($fk_pre){
+        $query= "SELECT * FROM pregunta WHERE id=$fk_pre";
+
+        $this->con->conectar();
+
+        $rs = $this->con->ejecutar($query);
+
+
+        
+        $info = array();
+
+
+        $reg = $rs->fetch_array();
+            
+
+            $idPre=$reg[0];
+            $op1=$reg[1];
+            $op2=$reg[2];
+         
+            
+
+
+            $pre = new Pregunta($idPre,$op1,$op2);
+            
+
+            $info[]=$pre;
+
+
+        
+
+
+        $this->con->desconectar();
+
+       
+
+        return $info;
+    }
+
+
+
+
 }

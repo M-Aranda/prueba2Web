@@ -12,7 +12,7 @@
 <h1>Encuesta</h1>
 
 <a href="verResultados.php">Ver resultados</a>
-
+<br>
 
 <form action="../controller/controladorCrearResultado.php" method="post">
 <?php
@@ -33,14 +33,10 @@ $sOp=2;
 
     echo "<h1>Pregunta ".$pregunta->getId()."</h1>";
     echo "<br>";
-    echo "<br>";
-    echo "<br>";
     echo '<input type="submit" name="op['.$pOp.",".$pregunta->getId().']" value="'.$pregunta->getOpcion1().'" />'; 
     echo "<br>";
     echo "<br>";
-    echo "<br>";
     echo '<input type="submit" name="op['.$sOp.",".$pregunta->getId().']" value="'.$pregunta->getOpcion2().'" />'; 
-    echo "<br>";
     echo "<br>";
     echo "<br>";
     echo "<br>";

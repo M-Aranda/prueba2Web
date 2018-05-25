@@ -36,15 +36,25 @@ PRIMARY KEY(id)
 );
 
 
--- El trigger que crea estadisticas funciona
 CREATE TRIGGER crearEstadisticaParaPregunta AFTER INSERT ON pregunta
 FOR EACH ROW
 INSERT INTO estadistica VALUES (NULL,(SELECT MAX(id) FROM pregunta),0,0,0);
 
 
+
+
+
+SELECT * FROM pregunta;
+SELECT * FROM resultado;
+SELECT * FROM estadistica;
+
+
+
+
+DROP DATABASE marcelo_aranda_prueba2;
 /*
 Procedimiento que suma +1 a la cantidad de votos de op1 o 2 de cada pregunta dependiendo de cual se eligio (retorna mas de 2 resultados, no estoy seguro porque)
-*/
+
 DELIMITER //
 CREATE PROCEDURE actualizarEstadistica (fk_pre INT)
 BEGIN
@@ -67,19 +77,8 @@ END IF;
 END//
 
 DELIMITER ;
+*/
 
-
-
-
-
-SELECT * FROM pregunta;
-SELECT * FROM resultado;
-SELECT * FROM estadistica;
-
-
-
-
-DROP DATABASE marcelo_aranda_prueba2;
 
 /*
 DELIMITER //
