@@ -69,17 +69,28 @@ class Data{
 
     }
 
-
-    /*
-    Probando esto
-    
-    public function actualizarEstadistica(){
-        $query="CALL actualizarEstadistica";
+    public function sumarCantVotos($fk_pregunta){
+        $query="UPDATE estadistica SET cantVotos=cantVotos+1 WHERE fk_pregunta=$fk_pregunta";
         $this->usarConexion($query);
-
     }
 
 
-*/
+
+
+
+    public function actualizarCantVotosOp1($fk_pregunta){
+        $query= "UPDATE estadistica SET cOp1=cOp1+1 WHERE fk_pregunta=$fk_pregunta";
+        $this->usarConexion($query);
+
+
+    }    
+
+    public function actualizarCantVotosOp2($fk_pregunta){
+        $query= "UPDATE estadistica SET cOp2=cOp2+1 WHERE fk_pregunta=$fk_pregunta";
+        $this->usarConexion($query);
+
+
+    }
+
 
 }

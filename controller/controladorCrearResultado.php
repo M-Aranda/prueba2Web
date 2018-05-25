@@ -38,12 +38,18 @@ $segundaOpcionSeleccionada=FALSE;
 
 if($opSeleccionada==1){
     $primeraOpcionSeleccionada=TRUE;
+    $d->actualizarCantVotosOp1($id_de_pregunta_respondida);
 
 }else if($opSeleccionada==2){
     $segundaOpcionSeleccionada=TRUE;
+    $d->actualizarCantVotosOp2($id_de_pregunta_respondida);
 }
 
 $d->crearResultado($primeraOpcionSeleccionada,$segundaOpcionSeleccionada,$id_de_pregunta_respondida);
+$d->sumarCantVotos($id_de_pregunta_respondida);
+
+
+
 
 
 
