@@ -9,6 +9,10 @@
 </head>
 <body>
 
+<h1>Encuesta</h1>
+
+<a href="verResultados.php">Ver resultados</a>
+
 
 <form action="../controller/controladorCrearResultado.php" method="post">
 <?php

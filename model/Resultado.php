@@ -3,15 +3,15 @@
 Class Resultado{
 
     private $id;
-    private $cantVotosOpcion1;
-    private $cantVotosOpcion2;
+    private $op1Seleccionada;
+    private $op2Seleccionada;
     private $fk_pregunta;
 
 
-    public function __construct($id,$cantVotosOpcion1,$cantVotosOpcion2,$fk_pregunta){
+    public function __construct($id,$op1Seleccionada,$op2Seleccionada,$fk_pregunta){
         $this->id= $id;
-        $this->cantVotosOpcion1 = $cantVotosOpcion1;
-        $this->cantVotosOpcion2 = $cantVotosOpcion2;
+        $this->op1Seleccionada = $op1Seleccionada;
+        $this->op2Seleccionada = $op2Seleccionada;
         $this->fk_pregunta = $fk_pregunta;
 
     }
@@ -24,13 +24,13 @@ Class Resultado{
     }
 
 
-    public function getCantVotosOpcion1(){
+    public function getOp1Seleccionada1(){
         
-        return $this->cantVotosOpcion1;
+        return $this->op1Seleccionada;
     }
 
 
-    public function getCantVotosOpcion2(){
+    public function getOp2Seleccionada(){
         
         return $this->cantVotosOpcion2;
     }
@@ -49,13 +49,13 @@ Class Resultado{
     }
 
 
-    public function setCantVotosOpcion1($cantVotosOpcion1){
-        $this->cantVotosOpcion1 = $cantVotosOpcion1;
+    public function setOp1Seleccionada($op1Seleccionada){
+        $this->op1Seleccionada = $op1Seleccionada;
     }
 
 
-    public function setCantVotosOpcion2($cantVotosOpcion2){
-        $this->cantVotosOpcion2 = $cantVotosOpcion2;
+    public function setOp2Seleccionada($op2Seleccionada){
+        $this->op2Seleccionada = $op2Seleccionada;
     }
 
     public function setFk_pregunta($fk_pregunta){

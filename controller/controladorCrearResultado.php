@@ -8,14 +8,10 @@ require_once("../model/Resultado.php");
 
 session_start();
 
-/*
-$cVotOp1=$_REQUEST["op1"];
-$cVotOp2=$_REQUEST["op2"];
-$fk_pregunta=$_REQUEST[""];
-*/
 
 $dato=key($_POST['op']);
-echo $dato;
+
+
 
 
 $division=explode(',',$dato);
@@ -28,7 +24,7 @@ $id_de_pregunta_respondida=array_values($division)[1];
 
 
 
-echo "<h1>Se selecciono la opcion ".$opSeleccionada." para la pregunta de id ".$id_de_pregunta_respondida."</h1>";
+//echo "<h1>Se selecciono la opcion ".$opSeleccionada." para la pregunta de id ".$id_de_pregunta_respondida."</h1>";
 
 
 //echo "$dato";
@@ -37,10 +33,20 @@ echo "<h1>Se selecciono la opcion ".$opSeleccionada." para la pregunta de id ".$
 
 $d= new Data();
 
+$primeraOpcionSeleccionada=FALSE;
+$segundaOpcionSeleccionada=FALSE;
+
+if($opSeleccionada==1){
+    $primeraOpcionSeleccionada=TRUE;
+
+}else if($opSeleccionada==2){
+    $segundaOpcionSeleccionada=TRUE;
+}
+
+$d->crearResultado($primeraOpcionSeleccionada,$segundaOpcionSeleccionada,$id_de_pregunta_respondida);
 
 
 
-
-//header("location:../view/encuesta.php");
+header("location:../view/encuesta.php");
 
 ?>

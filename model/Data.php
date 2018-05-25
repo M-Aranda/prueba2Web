@@ -26,6 +26,7 @@ class Data{
     }
 
 
+
     public function rescatarPreguntas(){
         $query= "SELECT * FROM pregunta";
 
@@ -61,13 +62,24 @@ class Data{
     }
 
 
-    public function crearResultado($cantVotosOpcion1, $cantVotosOpcion2, $fk_pregunta){
-        $query = "INSERT INTO pregunta VALUES (NULL, '$cantVotosOpcion1', '$cantVotosOpcion2', '$fk_pregunta')";
+    public function crearResultado($op1Seleccionada, $op2Seleccionada, $fk_pregunta){
+        $query = "INSERT INTO resultado VALUES (NULL, '$op1Seleccionada', '$op2Seleccionada', '$fk_pregunta')";
         $this->usarConexion($query);
         
 
     }
 
 
+    /*
+    Probando esto
+    
+    public function actualizarEstadistica(){
+        $query="CALL actualizarEstadistica";
+        $this->usarConexion($query);
+
+    }
+
+
+*/
 
 }
