@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Resultados</title>
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
 
@@ -38,11 +40,11 @@ echo "<h1> Pregunta ".$estadistica->getFk_pre()."</h1>
      <table border=1>
      <tr>
      <td>".$pregunta[0]->getOpcion1()."</td>
-     <td>".$porcOp1."%</td>
+     <td>".round($porcOp1,1)."%</td>
      </tr>
      <tr>
      <td>".$pregunta[0]->getOpcion2()."</td>
-     <td>".$porcOp2."%</td>
+     <td>".round($porcOp2,1)."%</td>
      </tr>
      </table>
      <br>

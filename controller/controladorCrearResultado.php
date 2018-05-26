@@ -52,6 +52,7 @@ $d->sumarCantVotos($id_de_pregunta_respondida);
 
 
 
+//los headers no funcionan online, cambiar por javascript o meta
 
 header("location:../view/encuesta.php");
 

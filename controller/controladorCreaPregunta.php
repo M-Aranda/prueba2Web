@@ -19,7 +19,7 @@ $d= new Data();
 $d->crearPregunta($opcion1,$opcion2);
 
 
-
+//los headers no funcionan online, cambiar por javascript o meta
 header("location:../index.php");
 
 ?>

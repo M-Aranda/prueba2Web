@@ -6,7 +6,7 @@ class Data{
     private $con;
 
     public function __construct(){
-        $this->con = new Conexion("marcelo_aranda_prueba2");
+        $this->con = new Conexion();
     }
 
     public function usarConexion($query){

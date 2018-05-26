@@ -22,7 +22,7 @@ FOREIGN KEY (fk_pregunta) REFERENCES pregunta (id),
 PRIMARY KEY(id)
 );
 
--- Hasta aca funciona todo barbaro
+
 
 
 CREATE TABLE estadistica(
@@ -40,9 +40,16 @@ CREATE TRIGGER crearEstadisticaParaPregunta AFTER INSERT ON pregunta
 FOR EACH ROW
 INSERT INTO estadistica VALUES (NULL,(SELECT MAX(id) FROM pregunta),0,0,0);
 
+/*
+TRUNCATE resultado;
+TRUNCATE estadistica;
+SET FOREIGN_KEY_CHECKS = 0; 
+TRUNCATE pregunta; 
+SET FOREIGN_KEY_CHECKS = 1;
+*/
 
 
-
+/*
 
 SELECT * FROM pregunta;
 SELECT * FROM resultado;
@@ -52,6 +59,8 @@ SELECT * FROM estadistica;
 
 
 DROP DATABASE marcelo_aranda_prueba2;
+/*
+
 /*
 Procedimiento que suma +1 a la cantidad de votos de op1 o 2 de cada pregunta dependiendo de cual se eligio (retorna mas de 2 resultados, no estoy seguro porque)
 
